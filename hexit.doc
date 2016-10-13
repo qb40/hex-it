@@ -1,0 +1,970 @@
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º	        HexIt v1.57 (C) 1995-2001 Mikael Klasson     		      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+This program is Freeware, please distribute it as long as the original
+package is intact and all the files therein are unmodified.
+
+
+  1 - Legal issues aka crap
+
+      1.1 - Registering
+      1.2 - Disclaimer
+
+  2 - What is HexIt?
+
+      2.1 - HexIt
+      2.2 - System requirements
+      2.3 - Some features
+      2.4 - Coming attractions
+
+  3 - How do I control HexIt?
+
+      3.1 - Brief info on keys
+      3.2 - Detailed info on keys
+      3.3 - Mouse support
+      3.4 - Commandline arguments
+
+  4 - What does all that info mean?
+
+      4.1 - The headline
+      4.2 - The statusrow (TextMode)
+      4.3 - The statusrow (HexMode)
+      4.4 - The statusrow (DumpMode)
+      4.5 - The statusrow (CodeMode)
+
+  5 - Miscellaneous information
+
+      5.1 - The setup-mode
+      5.2 - Notes
+      5.3 - Files in this package
+      5.4 - Troubleshooting
+
+  6 - Who made this possible?
+
+      6.1 - Registered users
+      6.2 - Nice chaps
+      6.3 - Contact me!
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 1.1			      Registering				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+You no longer have to register HexIt, although I'd be _really_ grateful
+if you feel that HexIt is worth something to you and decide to send me
+something! A postcard, a letter, some money, anything! You _can_ at
+least afford an email, can't you? Postcards are warmly appreciated!
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 1.2			       Disclaimer				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+This program and the companying documentations are distributed as is. In
+no event will I, Mikael Klasson, be liable to you for damages, including
+but not limited to, any lost profits, lost money, or other special,
+incidental or consequential damages arising out of the use or inability
+to use this program, even if the programmer has been advised of the
+possibility of such damages, or for any claim by any other party. I make
+no warranty or representation, either expressed or implied, with respect
+to this program, its quality, performance, merchantability, or fitness
+for a particular purpose.
+
+Other products or trademarks mentioned are copyrighted and belong to
+their respective owners.
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 2.1				 HexIt					      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+HexIt is a binary editor, usually refered to as a hexeditor. The main
+difference between a regular texteditor and a hexeditor is that a
+texteditor translates some bytes to tabs, linefeeds, carriage returns,
+etc or simply ignores them. A hexeditor does no such thing, instead it
+prints the hexadecimal value of the byte. Most hexeditors have a
+textfield as well, where you'll see all sorts of funny-looking faces and
+arrows. ;)
+
+You should use a hexeditor if you're planning to alter something in a
+binary file, e.g an exe-file. But on the other hand, why would anyone
+want to do that? <g>
+
+Umm... *cough* I've come to understand that I'm not the best of
+doc-writers. If you feel there's something missing in this file, why
+don't you email me and tell me so? Feel free to write/rewrite a portion
+of the doc yourself and send it to me. If I like your work, I'll include
+it in this file and give you credits for it. I do of course reserve the
+right to reject your changes, add spelling- and/or grammatical errors to
+them or do some other nasty thing that comes to mind. Come now folks,
+don't be afraid. Here's your chance to do something useful with your
+life! ;)
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 2.2			  System Requirements				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+ş 80386 or better.
+
+ş MS-DOS 3.0 or higher, or some other OS that is capable of running such
+  files. (MS-DOS version only)
+
+ş An OS capable of running win32 binaries. (Win32 version only)
+
+ş A VGA card would be great.
+
+ş A mouse if you wish to utilize the mouse-support.
+
+ş Some low memory for the program to run in, approx 209KB (MS-DOS
+  version only). Extra memory is used for files and clipboard. The more
+  you have, the better off you are. The win32 version currently
+  allocates memory in 1 meg chunks, so you'll need at least that amount.
+  Since you can't even dream of being able to run a win32 exe with less
+  than 4 meg - perhaps more - this shouldn't be much of a problem.
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 2.3			     Some Features				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+ş Calculator
+
+ş Built-in assembler! Press <tab> in CodeMode.
+
+ş Recording and playback of macros.
+
+ş Built-in disassembler! Check out CodeMode inside HexIt ( <F4> is the
+  default key for choosing mode ).
+
+ş 80x25/28/43/50/60 textmode hexeditor. HexIt starts up in the videomode
+  you used when starting the program if it is one of the above, else it
+  uses 80x25. This is of course fully configurable, you can choose to
+  start in e.g 80x50 if you want to. But then again, you're always in
+  80x50 anyway, aren't you? The win32 version can startup with any
+  number of lines as long as it's not more than 140.
+
+ş Supports 100 files in memory at the same time.
+
+ş Files may be as big as your total amount of free memory. Virtual
+  memory can be used in the win32 version.
+
+ş SplitScreen facilities.
+
+ş Editing. Yes! =)
+
+ş Preserves your "pre-HexIt" videomode, and initializes your favourite
+  80x12 textmode (or whatever you use) upon exit if you so desire...
+
+ş Deleting bytes and thereby shrinking the file.
+
+ş Inserting bytes and thereby expanding the file. You can also set the
+  Insert/Overwrite toggle to Insert, and then type whatever you like,
+  HexIt will push the rest of the file forward for you.
+
+ş Clipboard (maximum size equals your free mem minus the total size of
+  your loaded files) with cut, copy and paste!
+
+ş Goto fileoffset, both absolute and relative.
+
+ş Hex/ASCII search- and replace-facilities. Forwards/Backwards, all
+  files/one file, etc.
+
+ş Online help.
+
+ş Ability to view files as a normal textviewer would.
+
+ş This entire file is loaded and displayed if you press Alt+H.
+  Functionkeys are always explained at the bottomrow.
+
+ş Create new files simply by giving their name as an argument.
+
+ş Compare two files. Read more about it further down.
+
+ş A setup mode where you can alter colours, configure keys etc.
+
+ş Mousesupport! Scroll the screen using your mouse. Define what HexIt
+  will do when a specific mouse-button is pressed!
+
+ş Supports wildcards when loading files, thus
+  "HexIt gunde.* gnu ka??.txt" is perfectly valid.
+
+ş EXE-header info.
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 2.4			   Coming Attractions				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+ş Lots of stuff, why don't you send me some ideas?
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 3.1	       Brief Info On The Keys (#=Shift, ^=Ctrl, @=Alt)		      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+Remember, these are only the default keys. You may have configured/may
+configure them differently.
+
+
+Global
+ÄÄÄÄÄÄ
+^@BackSpace	=	Exit HexIt
+^@Enter 	=	Setup-mode
+Esc		=	Exit HexIt
+Insert		=	Toggle Insert/Overwrite mode
+F1		=	Online helpsystem
+F2		=	Save the current file
+F3		=	Select file to edit
+F4		=	Choose mode (TextMode, HexMode, DumpMode, etc)
+F5		=	Goto
+F7		=	Search
+F8		=	Replace
+F9		=	CalcIt - A calculator
+^Enter		=	Play macro
+^Tab		=	Toggle base if you're in a numerical menufield
+^K_O		=	Open/Create file
+^K_Q		=	Quit file
+^K_R		=	Change path and filename
+^L		=	Search/Replace next
+^F1		=	Choose videomode
+^F8		=	Toggle macro recording
+^F9		=	Setup-mode
+@CursLeft/Right =	Prev/Next viewmode
+@F1		=	Goto HexMode
+@F2		=	Goto TextMode
+@F3		=	Goto DumpMode
+@F4		=	Goto CodeMode
+@1-9		=	Set offset #X
+@0		=	Push offset
+@H		=	Show help on used keys
+@K		=	Setup keys (ideal for looking up keys as well!)
+@N		=	Next file
+@P		=	Previous file
+@S		=	Split/unsplit screen
+@W		=	Toggle active window
+@X		=	Exit HexIt
+#@1-9		=	Get offset #X
+#@0		=	Pop offset
+
+
+HexMode
+ÄÄÄÄÄÄÄ
+Gray -		=	Cut
+Gray +		=	Copy
+Gray *		=	Paste
+CursLeft/Right	=	Move left/right one byte
+CursUp/Down	=	Move up/down one row ( = 16 bytes )
+PgUp/PgDown	=	Move up/down 16 rows ( = 256 bytes )
+Home/End	=	Goto first/last byte
+BackSpace	=	Put a zero at the preceding fileposition
+Delete		=	Delete current byte
+Tab		=	Switch between text- and hexfield
+F6		=	Manipulate EXE-header
+#cursormove	=	Move cursor and select
+#Delete 	=	Cut
+#Insert 	=	Paste
+^CursLeft/Right =	Move left/right one byte AND scroll screen
+^CursUp/Down	=	Move up/down one row ( = 16 bytes ) AND scroll screen
+^PgUp/PgDown	=	Move up/down 64 rows ( = 1024 bytes )
+^Insert 	=	Copy
+^A		=	Mark entire file
+^C		=	Compare next
+^K_L		=	Goto offset
+^N		=	Toggle NibbleMove
+^F2		=	Write selected block to file
+^F3		=	Compare two files
+^F4		=	Read block from file
+@A		=	Place a marker at current position
+@I		=	Insert a byte at the current position
+@U		=	Kill both markers
+
+
+TextMode
+ÄÄÄÄÄÄÄÄ
+CursLeft/Right	=	Scroll left/right one char
+CursUp/Down	=	Scroll up/down one line
+PgUp/PgDown	=	Scroll up/down one page
+Home/End	=	Goto first/last line
+W		=	Wrap/Unwrap
+F6		=	Choose linefeed-chars
+^CursLeft/Right =	Scroll left/right TABSIZE chars
+^PgUp/PgDown	=	Scroll up/down 4 pages
+^K_L		=	Goto line
+^F2		=	Set tabsize
+
+
+DumpMode
+ÄÄÄÄÄÄÄÄ
+CursUp/Down	=	Move up/down one row
+CursLeft/Right	=	Move left/right one byte
+PgUp/PgDown	=	Move up/down one page
+Home/End	=	Goto first/last byte
+^PgUp/PgDown	=	Move up/down 4 pages
+^K_L		=	Goto offset
+^M		=	Toggle mask
+@M		=	Define mask
+
+
+CodeMode
+ÄÄÄÄÄÄÄÄ
+CursLeft/Right	=	Move left/right one byte
+CursUp/Down	=	Move up/down one instruction
+PgUp/PgDown	=	Move up/down one page
+Home/End	=	Goto first/last byte
+BackSpace	=	Put a zero at the preceding fileposition
+Delete		=	Delete current byte
+Tab		=	AzmIt - Assemble an instruction
+^CursLeft/Right =	Dec/Inc screenoffset
+^CursUp/Down	=	Move up/down one instruction AND scroll screen
+^PgUp/PgDown	=	Move up/down 4 pages
+^K_L		=	Goto offset
+^N		=	Toggle NibbleMove
+^F2		=	Toggle segment size (16/32 bits)
+^F3		=	Select comment mode for immediate values
+^F4		=	AzmIt - Assemble an instruction
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 3.2	     Not-So-Brief Info On The Keys (#=Shift, ^=Ctrl, @=Alt)	      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+				ÚÄÄÄÄÄÄ¿
+				³Gray -³
+				ÀÄÄÄÄÄÄÙ
+This key removes the marked block from the file and puts it in the
+clipboard.
+
+				ÚÄÄÄÄÄÄ¿
+				³Gray +³
+				ÀÄÄÄÄÄÄÙ
+Does the same as "Gray -", except it doesn't remove the block from the
+file.
+
+				ÚÄÄÄÄÄÄ¿
+				³Gray *³
+				ÀÄÄÄÄÄÄÙ
+The clipboard is inserted at the current position if the
+Insert/Overwrite toggle is set to Insert, else it overwrites the data
+starting at the current position.
+
+			      ÚÄÄÄÄÄÄÄÄÄ¿
+			      ³BackSpace³
+			      ÀÄÄÄÄÄÄÄÄÄÙ
+Textfield
+ÄÄÄÄÄÄÄÄÄ
+Puts a zero at the preceeding byte and decreases your offset in the
+file. Note that if the Insert/Overwrite toggle is set to Insert, then
+pressing backspace will move the rest of the file (including your
+position) backwards one byte. This is the same as pressing CursLeft
+followed by DELete.
+
+Hexfield
+ÄÄÄÄÄÄÄÄ
+Puts a zero at the preceeding nibble and decreases your offset in the
+file by one nibble. Note that if the Insert-toggle is on and you are
+positioned over a high nibble, then the rest of the file will be moved
+one byte backwards.
+
+				ÚÄÄÄÄÄÄ¿
+				³INSert³
+				ÀÄÄÄÄÄÄÙ
+This key toggles the Insert/Overwrite toggle. If you are in Insert-mode,
+then the file will automatically move forward one byte when typing in
+the texfield (and every second keypress in hexfield). The result will be
+the same as if you pressed ALT+I, and then typed whatever it was.
+
+				  ÚÄÄ¿
+				  ³F1³
+				  ÀÄÄÙ
+Pressing F1 will pop up a menu from where you can go several ways, this
+is the helpsystem. The first time you press F1, you are taken to the
+"Help MainMenu" and from there you can navigate through the helpsystem
+by using the Cursorkeys and <Enter>. Pressing <Esc> will exit the
+helpsystem and store your current menu. Thus, the next time you press
+F1, you will start right where you exited. You can also use the first
+letter of the desired option to select it. E.g in this menu
+
+ÚÄÄÍ Faked Menu ÍÄÄ¿
+³ Back to MainMenu ³
+³ Exit this menu   ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+you could press 'B' to go back to the mainmenu, but using the Cursorkeys
+and <Enter> to select the first option would produce the same result.
+
+				  ÚÄ¿
+				  ³W³
+				  ÀÄÙ
+This key toggles between Wrapped and Unwrapped lines in textmode. When
+Unwrapped, the lines have a maximum width of 999 characters. After that
+the line is cut and continued on the next line.
+
+				  ÚÄÄ¿
+				  ³F3³
+				  ÀÄÄÙ
+This key invokes a popupmenu where you select which file to edit (among
+the ones already loaded). Use CursUp/Down to scroll through the list and
+CursLeft/Right to see more if all files won't fit in one menu. You can
+also use the functionkeys to select.
+
+				  ÚÄÄ¿
+				  ³F5³
+				  ÀÄÄÙ
+[HexMode]
+Pressing this key will popup a menu prompting you for an offset to go
+to. You can prefix the value with a plus- or minus-sign to make a
+relative jump.
+
+[TextMode]
+You will be prompted for a linenumber to go to. If you prefix the number
+with a minus or a plus, HexIt will jump up/down X lines.
+
+
+				  ÚÄÄ¿
+				  ³F6³
+				  ÀÄÄÙ
+[HexMode]
+Displays the EXE-header and lets you do the following:
+ o  Edit it directly
+ o  Calculate valid values at offset 2 and 4
+ o  Goto start of relocation-table
+ o  Goto SS:SP
+ o  Goto image (directly after exe-header)
+ o  Goto the programs entrypoint
+
+				  ÚÄÄ¿
+				  ³F7³
+				  ÀÄÄÙ
+This key takes you to the search function. You are then given the
+opportunity to change a few things about the search, they are marked
+with an [X] if they are in use. The options are:
+
+START AT BOF	If ON, the search starts at BOF (EOF if BACKWARDS is
+		ON), otherwise HexIt starts searching from the current
+		position.
+
+IGNORE CASE	ON means don't care about upper or lower case.
+
+ALL FILES	ON means search for the string in all loaded files. Note
+		that this option always searches from the beginning of
+		the file, overriding the START AT BOF setting.
+
+BACKWARDS	ON means search/replace backwards.
+
+You move between these options and the two "write-fields" with CursUp
+and CursDown, toggle the options by pressing space. There are, as I
+said, two fields in which you can type the string to search for. The
+first is an ASCII-field, in which you type the text as in an ordinary
+texteditor. The other one is a hex-field where you write the string to
+search for in hexadecimal digits.
+
+Also note, that if you have previously searched for a string, this
+string will still be there when you enter the search-function for the
+next time. The different toggles are saved as well. Simply start writing
+to discard the previous string, or press BackSpace, CursLeft or
+CursRight to continue editing the current string. Pressing ESC while in
+the search-function takes you back to the file-editing, it also discards
+any string written in any of the search-fields. To start searching,
+simply press <Enter>.
+
+				  ÚÄÄ¿
+				  ³F8³
+				  ÀÄÄÙ
+Pressing F8 takes you to the replace-function. The different options in
+this "menu" is basically the same as those for searching, except:
+
+ASK FIRST	ON gives you the opportunity to choose which ocurrences
+		to replace. That is, it will bring up a menu saying
+		"Replace this?", thus asking you to select one of these
+		options:
+
+			YES	Replaces the current ocurrence
+			NO	Does NOT replace the current ocurrence
+			REST	Replaces all ocurrences with no further
+				questions
+			QUIT	Quit replacing
+
+		Off means that it automagically replaces ALL ocurrences
+
+You are also presented with two more inputfields (compared to those when
+searching). You are supposed to type in the string to replace WITH here.
+The four inputfields are named "S-ASC", "S-HEX", "R-ASC" and "R-HEX",
+where "S" stands for "Search" and "R" for "Replace". Just press <Enter>
+to start searching for matches to replace.
+
+				  ÚÄÄ¿
+				  ³F9³
+				  ÀÄÄÙ
+Enter an expression and see its result in dec, hex, oct and bin. Valid
+suffixes are d,h,o and b. Valid operators are -,+,*,/,**,<<,>>,^,& and |.
+
+				  ÚÄÄ¿
+				  ³^C³
+				  ÀÄÄÙ
+When pressing Ctrl+C, HexIt will do a filecompare using the last
+settings you specified. If you have not previously chosen comparemode,
+you will be prompted to do so.
+
+				  ÚÄÄ¿
+				  ³^L³
+				  ÀÄÄÙ
+Use this key to search for the next matching string or replace it
+(depending on what you last used). If you have not previously typed in a
+string to search for, you will be guided to the
+"type-in-the-string-to-search-for-menu". =)
+
+				 ÚÄÄÄ¿
+				 ³^F1³
+				 ÀÄÄÄÙ
+This will bring up a popup-menu asking you to choose a videomode. Your
+current videomode will be the default choice.
+
+				 ÚÄÄÄ¿
+				 ³^F3³
+				 ÀÄÄÄÙ
+[HexMode]
+Ctrl+F3 takes you to the file-compare menu (assuming you have two or
+more files loaded). If you're already in splitscreen mode and has two
+different files in the windows, you will directly be prompted to choose
+compare-mode but more of that later. Else you will be presented with a
+list of files in which you shall choose the file to compare your present
+one with. However, if you only have two files loaded HexIt will
+automagically use them.
+
+Choosing compare-mode
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+You may choose between eight different modes:
+Search for difference:
+	From file-beginnings
+	Forward from current position
+	Backward from current position
+	From file-endings
+
+Search for similarity:
+	From file-beginnings
+	Forward from current position
+	Backward from current position
+	From file-endings
+
+I think they are all pretty self-explanatory. The first four stops
+comparing as soon as the two files differ from each other while the last
+four stops when two bytes are the same.
+
+[CodeMode]
+Brings up the "CM comments on immediate values?" menu. From here you can
+select how extensive commenting you want CM to perform when an
+instruction involves immediate data. "None" never shows any comments.
+"Some" shows comments for MOV, ADD, SUB, PUSH and CMOV. "All" shows
+comments for all instructions involving immediate data.
+
+				  ÚÄÄ¿
+				  ³@A³
+				  ÀÄÄÙ
+This will drop a marker at the current fileoffset. After putting two
+markers, you can cut or copy the marked block. ( You don't have to put
+the 2:nd marker if you're feeling lazy... ;)
+
+				  ÚÄÄ¿
+				  ³@U³
+				  ÀÄÄÙ
+This clears all markers. Note however, that the clipboard is not altered
+in any way, the copied/cut block is still there, just waiting for you to
+paste it... :)
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 3.3			     Mouse Support				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+Yes, you can use your mouse to scroll the screen! Just slide it up and
+down and the world will slide with you... :) You can also adjust the
+speed of your mouse-scroll, there are separate speeds for TextMode and
+HexMode.
+
+You can also define your mousebuttons to do whatever (almost) you like!
+Even here there are separate configurations for TextMode and HexMode.
+
+Just press Ctrl+F9 to enter the setup-menu, then choose "Mouse" to start
+configuring the options regarding your mouse!
+
+If you for any reason would not like to use your mouse, you can always
+just leave it alone on the desk or turn off the mouse in the setup.
+
+If starting HexIt takes a long time I suggest you try to find another
+mouse-driver! Some of them take ages to initialize the mouse while
+others are pretty smooth. If it still takes long time to start and you
+don't use your mouse in HexIt, I suggest you remove mousesupport in the
+config ("Use mouse-support?").
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 3.4			 Commandline Arguments				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+HexIt reacts to a few arguments given on the commandline. These are:
+-file X 	= file that args affect (1 = first)
+-win X		= window that args affect (1 = first)
+-ss X		= splitscreen (0 = off, 1 = on)
+-vm X		= viewmode (1 = TextMode, 2 = HexMode, etc.)
+-o X		= go to offset X
+--		= interpret the rest of the cmdline as filenames
+
+"win" and "file" both defaults to 1.
+An example might be in order here. The commandline
+	"hexit hexit.exe -vm 3 -win 2 -vm 2 -ss 1 -- -gnu"
+would start HexIt in splitscreen with DumpMode in the upper window and
+HexMode in the lower window with two files loaded, "hexit.exe"
+and "-gnu".
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 4.1			      The Headline				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+Selected : 00000303h ú ÄÍ HexIt v1.00 (C) Mikael Klasson 1996 ÍÄ ú OR ú  14900k
+ÀÄÄÄÄÂÄÄÄÄÄÙ   ÀÄÂÄÙ	  ÀÄÄÄÄÂÄÄÄÄÙ	  ÀÄÄÄÄÄÂÄÄÄÄÄÄÙ	   ^^	 ÀÄÂÄÄÙ
+# of bytes selected         Version         That's me!         OBJ1ÙÀOBJ2 OBJ3
+
+OBJ1:	Flag to show whether you're in Insert- or Overwrite-mode.
+OBJ2:	Indicates whether or not you're currently recording a macro.
+OBJ3:	Your total amount of free hi memory. Beware, this might look a
+	bit strange if you have more than 1GB RAM! =)
+	( 2.5 years later: Sheesh! We're getting there... )
+	( Another year or so later: *laugh* With the birth of a native
+          win32 HexIt, it's now definitely possible to have more than
+          1GB available mem, counting both physical and virtual mem.
+          Therefore values are now ceiled to 999999. Evolution is fun,
+          don't you think? )
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 4.2			The Statusrow (TextMode)			      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+L 457342/528632   C 2342   100%   *C:\ASSEM\HEXIT\HEX149.ASM	CRLF <Active> W
+  ÀÄÂÄÄÙ ÀÄÂÄÄÙ     ÀÂÄÙ   ÀÂÙ	  ^ÀÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÙ	ÀÂÄÙ ÀÄÄÂÄÄÄÙ ^
+   OBJ1   OBJ2	    OBJ3   OBJ4   ³	      OBJ6		OBJ7   OBJ8 ÚÄÙ
+				 OBJ5					   OBJ9
+
+OBJ1:	Current textline (the first one on screen)
+OBJ2:	Total lines in file
+OBJ3:	Current column, used to offset text when running unwrapped
+OBJ4:	Position in file given in percent of filesize
+OBJ5:	Indicates that the file has been changed since the last save
+OBJ6:	Full path and filename of the current file
+OBJ7:	Current linefeed-characters
+		CRLF	= Carriage Return (0dh) + LineFeed (0ah)
+		CR	= Carriage Return (0dh)
+		LF	= Linefeed (0ah)
+		NULL	= Zero-byte (00h)
+OBJ8:	Indicates if this is the active window or not
+OBJ9:	'W' means wrap textlines, a space means don't wrap
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 4.3			The Statusrow (HexMode) 			      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+00000000/0000DEDF  Text  «  100%  *C:\ASSEM\HEXIT\HEX149.EXE   -14 242 00101010
+ÀÄÄÂÄÄÄÙ ÀÄÄÂÄÄÄÙ  ÀÂÄÙ  ^  ÀÂÙ   ^ÀÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÙ   ÀÂÙ ÀÂÙ ÀÄÄÄÂÄÄÙ
+  OBJ1	   OBJ2    OBJ3  ³  OBJ5  ³	      OBJ7	       OBJ8 ³	  OBJ10
+			OBJ4	 OBJ6				   OBJ9
+
+OBJ1:	Position in file
+OBJ2:	Filesize
+OBJ3:	Shows whether you're in the hexfield or the textfield
+OBJ4:	Indicates that NibbleMove is activated
+OBJ5:	Position in file, given in percent of filesize
+OBJ6:	Indicates that the file has been changed since the last save
+OBJ7:	Full path and filename of the current file
+OBJ8:	Signed dec value of the active byte
+OBJ9:	Unsigned dec value of the active byte
+OBJ10:	Binary value of the active byte
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 4.4			The Statusrow (DumpMode)			      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+100%  0000DEDF	20 <= 04 x <= 7E  *C:\ASSEM\HEXIT\HEX149.EXE	     <Active> M
+ÀÂÙ   ÀÄÄÂÄÄÄÙ	À´    À´      À´  ^ÀÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÙ	     ÀÄÄÄÂÄÄÙ ^
+OBJ1	OBJ2	OBJ3  OBJ4   OBJ5 ³	      OBJ7			OBJ8 ÚÙ
+				 OBJ6					   OBJ9
+
+OBJ1:	Position in file, given in percent of filesize
+OBJ2:	Filesize
+OBJ3:	Lower limit for mask
+OBJ4:	Number of continuous bytes that must pass the mask in order for
+	them to be visible
+OBJ5:	Upper limit for mask
+OBJ6:	Indicates that the file has been changed since the last save
+OBJ7:	Full path and filename of the current file
+OBJ8:	Indicates if this is the active window or not
+OBJ9:	Indicates that the mask is activated
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 4.5			The Statusrow (CodeMode)			      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+00000000/0000DEDF  100%  «   16   *C:\ASSEM\HEXIT\HEX149.EXE	     <Active> S
+ÀÄÄÂÄÄÄÙ ÀÄÄÂÄÄÄÙ  ÀÂÄÙ  ^   ÃÙ   ^ÀÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÙ	     ÀÄÄÂÄÄÄÙ ^
+  OBJ1	   OBJ2    OBJ3 OBJ4 OBJ5 ³	      OBJ7		       OBJ8  ÚÙ
+				 OBJ6					   OBJ9
+
+OBJ1:	Position in file
+OBJ2:	Filesize
+OBJ3:	Position in file, given in percent of filesize
+OBJ4:	Indicates that NibbleMove is activated
+OBJ5:	Current segment size, 16/32
+OBJ6:	Indicates that the file has been changed since the last save
+OBJ7:	Full path and filename of the current file
+OBJ8:	Indicates if this is the active window or not
+OBJ9:	Current ImmediateComments mode, N = None, S = Some, A = All
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 5.1			     The Setup Mode				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+By pressing Ctrl+F9 you will enter the setup mode. From there you can
+change the available options, such as the colours, keys, whether HexIt
+should autodetect the videomode at startup and so on.
+
+When saving the setup, HexIt writes to a file called HEXIT.CFG. It
+automagically checks where your HEXIT.EXE (or whatever absurd name
+you've decided to give it) is situated, and creates/updates the
+config file there. Every time you start HexIt, it searches that
+directory for a file called HEXIT.CFG. If it finds such a file, Hexit
+reads the configfile and uses those options, otherwise it will use the
+standard options.
+
+Note that it does not matter if you are in the same directory as
+HEXIT.EXE. Therefore it is fully acceptable, and advisable, to put
+HEXIT.EXE in a directory to which your PATH-variable points. Because of
+the fact that there is a separate cfg file, you can use your old config
+with any version of HexIt (not versions before 0.94á though). You can
+even use a configfile from the latest version of HexIt with an older
+one.
+
+HexIt will of course only accept options that the current version
+supports. If you e.g have a configfile from v234.42 (Yeah! =) ) and try
+to use it with HexIt 0.94á, you will only be able to use the options
+that 0.94á supports. Don't worry about this though, HexIt takes care of
+all that.
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 5.2				 Notes					      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+The exe file is getting bigger and bigger everyday and so is the source
+code. Right now it's 653KB and 31400 lines long. Btw, HexIt is coded in
+100% pure 32-bit asm. Well, I _could_ have coded my INT 24h-handler in
+16-bit asm... :)
+
+This info applies only to the win32 port, and only when running NT: I
+was perplexed by the fact that HexMode was a lot slower than the other
+modes. After some fiddling I've come to realize that the speed of the
+console output routines in Windows depend greatly on how varied the
+colour attributes are. Little variance makes for great speed; great
+variance makes for little speed. I therefore recommend that you set the
+"Background" colour in HexMode to the same colour as "Hexfield
+(normal)". Try it out if you think HexMode is sluggish. Some speedups
+can be made in CodeMode and DumpMode as well by altering their
+background colours. Note: versions after v1.54 have these colours
+configured correctly per default.
+
+Please send me a letter, email or whatever if you find an annoying bug
+or maybe just want to ask me something or don't want anything special at
+all for that matter! It would be REALLY fun to see how far out in the
+world my little HexIt reaches. Please send me some email! Yiihaa! I've
+gotten emails from loads of ppl now, thank you all! Keep 'em coming! ;)
+
+You move around in the popup-menus with the Cursorkeys. You can however
+often just press the first letter of the chosen sentence, or in some
+cases press one of the functionkeys.
+
+Hmm... INT 21h,60h doesn't seem to work very well with CD-ROM-drives. I
+don't know whether it's MSCDEX or whatever that does it, but it doesn't
+work anyway. Anybody's got any suggestions?
+Anyway, because of this you may not see the full pathname of the file
+you are editing on the upper row (you should see everything but the
+driveletter though). If you explicitly specified a path when you loaded
+the file, you'll still see that one.
+Note that this only applies to files on CD-ROMs. The problem depends on
+what CD-driver you've got. My driver works great under win95 but not
+under MS-DOS.
+
+To obtain the latest version of HexIt, just go to my homepage and
+download it from there! See further down for addresses.
+
+A quarter of a quadword is always more than a few bits of a byte in case
+you didn't know.
+
+I no longer have a betatester running OS/2 2.1, so I have absolutely no
+idea whether HexIt works under it or not. So please, if you run OS/2
+2.1, will you contact me and tell me what happens?
+
+If something's not totally clear to you, try reading WHATSNEW.*, it
+contains _lots_ of goodies not found anywhere else on this planet! ;)
+There are quite a few things in there that probably belong in this file.
+
+Aah yes, a good, bug-reporting fellow <hint, hint> named Andr‚s
+Mazzocchi has informed me that HexIt will crash if you try to change
+it's videomode when running in a _windowed_ MS-DOS shell under Windows
+3.1. My suggestion: don't run it in a windowed MS-DOS shell under
+Windows 3.1. Got that? ;)
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 5.3			    Files In Package				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+These are the files in the original package, do NOT remove or modify any
+of them!
+
+FILE_ID.DIZ		Description of HexIt for use in BBSs etc.
+HEXIT.DOC		English documentation (This one!).
+HEXIT.EXE		HexIt, The Hexeditor. The Executable. (MS-DOS)
+HEXITW.EXE		HexIt, The Hexeditor. The Executable. (Win32)
+HEXIT.ICO		Icon for HexIt (thanks, Andr‚s Mazzocchi!)
+WHATSNEW.XXX		"History"-file, describes HexIt's ongoing
+			evolution from a simple hexviewer to a
+			fullfledged hacking-machine... :-)
+			Oh yes, that "XXX" means the current version,
+			nothing else! ;)
+
+Did I mention that you're not supposed to remove or modify any of the
+files in the package and distribute them in some other form? Please
+don't change the name of the archive either. I rather dislike not being
+able to tell what version a package is just by looking at the filename.
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 5.4			    Troubleshooting				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+If HexIt behaves a bit oddly (read "crashes violently") and you fail to
+understand why, try deleting HEXIT.CFG and see if it helps.
+
+Think HexIt's slow? Read the "Notes" section in this document for some
+speed info pertaining to the win32 version.
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 6.1	           Registered Users (Thanks a bunch!)                         º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+Dag Sandgren		Gianni Melegari 	  Hannes Edfeldt
+Peter Korkala		Peter T. Karlsson	  Martin Gejke
+Christian Hansen	Fredrik slund		  Anders Johansson
+Jim Kjellin		Daniel W. Pitts 	  Jonas Eriksson
+Andr‚s Mazzocchi	Dimitri Schoolwerth	  Philippe Ahles
+Yashy			Robert Selberg
+
+To all of you: THANKS!!!
+
+I don't suppose your name will be here in the next version. ;)
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 6.2			    Special Thanks				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+For being there from the very beginning
+- Hannes Edfeldt aka Movax
+- Peter Korkala aka PKaze
+- Peter T. Karlsson aka Nafmo Saved
+- Martin Gejke aka Covenant
+
+For hopping on the train a wee bit later
+- Jim Kjellin aka Monolith
+- Jonas Eriksson aka Wizzie
+
+For ___LOTS___ of ideas, bugreports and friendly suggestions
+- Andr‚s Mazzocchi aka BlackAnt
+- Matthew Shepcar aka SCaBBy
+- Sune Marcher aka f0dder
+- Sebastian Schuberth aka Saint
+
+For the search ideas that I _still_ haven't implemented after 3 years or
+so *laugh*
+- Johan W„rlander
+
+For PMode
+- Thomas Pytel aka Tran
+
+For UPX - a very impressive EXE compressor
+- Markus F.X.J. Oberhumer & Laszlo Molnar (http://upx.tsx.org)
+
+Catering and pimping
+- Fredrik slund aka Frank Bolero
+
+
+É±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±»
+º									      º
+º 6.3			   How To Contact Me				      º
+º									      º
+È±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±¼
+
+Snail:		Mikael Klasson
+		Rydsv„gen 258:C35
+		S-584 34 Link”ping
+		Sweden
+
+Homepage:       http://mklasson.cjb.net
+
+Email:		fluff@geocities.com
+
+IRC:		Fluff* on IRCNet's #asm and occasionally #coders
+
+
+Cheers,
+Fluff
